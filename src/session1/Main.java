@@ -1,5 +1,7 @@
 package session1;
 
+import fraction.Fraction;
+
 import java.util.Scanner;
 
 public class Main {
@@ -26,17 +28,6 @@ public class Main {
 
         System.out.println("Chu vi: "+j.chuVi());
         System.out.println("Dien tich: "+j.dienTich());
-
-        Fraction f = new Fraction();
-        f.mauSo = 4;
-        f.tuSo = 2;
-
-        System.out.println("Phan so vua nhap la:");
-        f.display();
-        System.out.println("Phan so rut gon la:");
-        f.reduce();
-        System.out.println("Phan so nghich dao la:");
-        f.inverse();
 
     }
 }

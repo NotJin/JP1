@@ -1,4 +1,4 @@
-package session1;
+package fraction;
 
 public class Fraction {
     int tuSo;
