@@ -6,6 +6,14 @@ public class Fraction {
     int tuSo;
     int mauSo;
 
+    public Fraction() {
+    }
+
+    public Fraction(int tuSo, int mauSo) {
+        this.tuSo = tuSo;
+        this.mauSo = mauSo;
+    }
+
     public int getTuSo() {
         return tuSo;
     }
@@ -71,40 +79,36 @@ public class Fraction {
         int tg = tuSo;
         tuSo = mauSo;
         mauSo = tg;
-        System.out.println(Math.abs(tuSo) + "/" + Math.abs(mauSo));
     }
 
     // Ham cong 2 phan so
     public Fraction add(Fraction f2) {
-        int ts = this.getTuSo() * f2.getMauSo() + f2.getTuSo() * this.getMauSo();
-        int ms = this.getMauSo() * f2.getMauSo();
-        return new Fraction();
+        Fraction t = new Fraction();
+        t.setMauSo(this.getMauSo()*f2.getMauSo());
+        t.setTuSo(this.getTuSo()*f2.getMauSo() + this.getMauSo()* f2.getTuSo());
+        t.reduce();
+        return t;
     }
 
     // Ham tru 2 phan so
     public Fraction sub(Fraction f2) {
         int ts = this.getTuSo() * f2.getMauSo() - f2.getTuSo() * this.getMauSo();
         int ms = this.getMauSo() * f2.getMauSo();
-        return new Fraction();
+        Fraction sb = new Fraction(ts,ms);
+        return sb;
     }
 
     // Ham nhan 2 phan so
     public Fraction mul(Fraction f2) {
         int ts = this.getTuSo() * f2.getTuSo();
         int ms = this.getMauSo() * f2.getMauSo();
-        return new Fraction();
+        Fraction sb = new Fraction(ts,ms);
+        return sb;
     }
 
     // Chia 2 phan so
     public Fraction div(Fraction f2) {
-        // Nghich dao ps2
-        int tg = f2.tuSo;
-        f2.tuSo = f2.mauSo;
-        f2.mauSo = tg;
-
-        // Nhan this vs ps2 (da nghich dao)
-        int ts = this.getTuSo() * f2.getTuSo();
-        int ms = this.getMauSo() * f2.getMauSo();
-        return new Fraction();
+        f2.reduce();
+        return this.mul(f2);
     }
 }
