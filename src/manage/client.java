@@ -2,61 +2,52 @@ package manage;
 import java.util.Date;
 
 public class client {
-        protected int maxKH;
-        protected   String name;
-        protected Date date;
-        protected Double KW;
-        protected Double total;
+    private String code;
+    private String fullName;
+    private String invoiceDate;
+    private Integer qty;
 
-        public client(){
+    public client(String code, String fullName, String invoiceDate, Integer qty) {
+        this.code = code;
+        this.fullName = fullName;
+        this.invoiceDate = invoiceDate;
+        this.qty = qty;
+    }
 
-        }
-        public client(int maxKH,String name,Date date,Double KW,Double total){
-            this.maxKH =maxKH;
-            this.name = name;
-            this.date = date;
-            this.KW = KW;
-            this.total = total;
-        }
+    public String getCode() {
+        return code;
+    }
 
-        public int getMaxKH() {
-            return maxKH;
-        }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-        public void setMaxKH(int maxKH) {
-            this.maxKH = maxKH;
-        }
+    public String getFullName() {
+        return fullName;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public String getInvoiceDate() {
+        return invoiceDate;
+    }
 
-        public Date getDate() {
-            return date;
-        }
+    public void setInvoiceDate(String invoiceDate) {
+        this.invoiceDate = invoiceDate;
+    }
 
-        public void setDate(Date date) {
-            this.date = date;
-        }
+    public Integer getQty() {
+        return qty;
+    }
 
-        public Double getKW() {
-            return KW;
-        }
+    public void setQty(Integer qty) {
+        this.qty = qty;
+    }
 
-        public void setKW(Double KW) {
-            this.KW = KW;
-        }
-
-        public Double getTotal() {
-            return total;
-        }
-
-        public void setTotal(Double total) {
-            this.total = total;
-        }
+    public double calculateMoney(){
+        return 2000* getQty();
+    }
 
     }
