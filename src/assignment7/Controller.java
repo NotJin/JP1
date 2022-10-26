@@ -1,5 +1,6 @@
-package javafx;
+package assignment7;
 
+import javafx.Contact;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,7 +10,7 @@ import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
-public class ContactController {
+public class Controller {
     public TextField txtName;
     public TextField txtEmail;
     public ListView<Contact> lv;
